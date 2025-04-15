@@ -16,5 +16,12 @@ fun CustomTextField(
     onValueChange:  (String) -> Unit,
     leadingIcon: @Composable (() -> Unit),
 ) {
-
+    Column(
+        modifier = modifier
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelLarge
+        )
+    }
 }
