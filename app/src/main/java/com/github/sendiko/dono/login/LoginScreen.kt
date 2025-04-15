@@ -53,7 +53,7 @@ fun LoginScreen(
                 hint = "Masukkan username anda",
                 value = username,
                 onValueChange = { text ->
-
+                    viewModel.updateUsername(text)
                 },
                 leadingIcon = {
                     Icon(
