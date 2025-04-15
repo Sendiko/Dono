@@ -27,6 +27,10 @@ fun CustomTextField(
             modifier = modifier,
             value = value,
             onValueChange = onValueChange,
+            leadingIcon = leadingIcon,
+            placeholder = {
+                Text(text = hint)
+            }
         )
     }
 }
