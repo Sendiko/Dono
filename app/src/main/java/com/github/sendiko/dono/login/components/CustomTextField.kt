@@ -23,5 +23,10 @@ fun CustomTextField(
             text = label,
             style = MaterialTheme.typography.labelLarge
         )
+        OutlinedTextField(
+            modifier = modifier,
+            value = value,
+            onValueChange = onValueChange,
+        )
     }
 }
