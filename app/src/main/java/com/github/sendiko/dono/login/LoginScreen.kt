@@ -25,7 +25,9 @@ import androidx.compose.ui.unit.sp
 import com.github.sendiko.dono.login.components.CustomTextField
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    viewModel: LoginViewModel
+) {
 
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -88,5 +90,5 @@ fun LoginScreen() {
 @Preview
 @Composable
 private fun LoginScreenPrev() {
-    LoginScreen()
+//    LoginScreen()
 }
