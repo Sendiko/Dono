@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 import com.github.sendiko.dono.login.components.CustomTextField
 
 @Composable
-fun LoginScreen(modifier) {
+fun LoginScreen() {
 
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
