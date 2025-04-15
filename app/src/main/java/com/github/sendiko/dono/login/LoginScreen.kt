@@ -25,60 +25,68 @@ import androidx.compose.ui.unit.sp
 import com.github.sendiko.dono.login.components.CustomTextField
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(modifier) {
 
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    Column(
-        modifier = Modifier.fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.Start
-    ) {
-        Text(
-            text = "Login",
-            fontSize = 24.sp
-        )
-        Text(
-            text = "Login menggunakan username dan password anda.",
-        )
-        CustomTextField(
-            modifier = Modifier.fillMaxWidth(),
-            label = "Username",
-            hint = "Masukkan username anda",
-            value = username,
-            onValueChange = { text ->
-                username = text
-            },
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Person,
-                    contentDescription = "Username"
-                )
-            }
-        )
-        CustomTextField(
-            modifier = Modifier.fillMaxWidth(),
-            label = "Password",
-            hint = "Masukkan password anda",
-            value = password,
-            onValueChange = { text ->
-                password = text
-            },
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Lock,
-                    contentDescription = "Password"
-                )
-            }
-        )
-        Button(
-            modifier = Modifier.fillMaxWidth(),
-            onClick = { }
+    Surface {
+        Column(
+            modifier = Modifier.fillMaxSize()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
+            horizontalAlignment = Alignment.Start
         ) {
-            Text(text = "Login")
+            Text(
+                text = "Login",
+                fontSize = 24.sp
+            )
+            Text(
+                text = "Login menggunakan username dan password anda.",
+            )
+            CustomTextField(
+                modifier = Modifier.fillMaxWidth(),
+                label = "Username",
+                hint = "Masukkan username anda",
+                value = username,
+                onValueChange = { text ->
+                    username = text
+                },
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = "Username"
+                    )
+                }
+            )
+            CustomTextField(
+                modifier = Modifier.fillMaxWidth(),
+                label = "Password",
+                hint = "Masukkan password anda",
+                value = password,
+                onValueChange = { text ->
+                    password = text
+                },
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Lock,
+                        contentDescription = "Password"
+                    )
+                }
+            )
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { }
+            ) {
+                Text(text = "Login")
+            }
         }
     }
 
+}
+
+@Preview
+@Composable
+private fun LoginScreenPrev() {
+    LoginScreen()
 }
