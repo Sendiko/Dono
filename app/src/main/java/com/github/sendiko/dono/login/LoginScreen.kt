@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.sendiko.dono.login.components.CustomTextField
 
 @Composable
@@ -29,7 +30,7 @@ fun LoginScreen(
     viewModel: LoginViewModel
 ) {
 
-    var username by remember { mutableStateOf("") }
+    val username by viewModel.username.collectAsStateWithLifecycle()
     var password by remember { mutableStateOf("") }
 
     Surface {
@@ -52,7 +53,7 @@ fun LoginScreen(
                 hint = "Masukkan username anda",
                 value = username,
                 onValueChange = { text ->
-                    username = text
+
                 },
                 leadingIcon = {
                     Icon(
